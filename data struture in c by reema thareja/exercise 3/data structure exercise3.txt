@@ -1,0 +1,320 @@
+1. Arrays a kind of data structures that can store a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, but 
+   it is often more useful to think of an array as a collection of variables of the same type.
+
+   MANY IMPORTANCE OF ARRAYS ARE THERE, FEW OF THEM ARE :-
+ 
+   * it is better and convient way of storing the data of same datatypes with same size.
+  
+   * It allows us to store known number of elements in it.
+
+ 
+2. An array is a block of contiguous objects with no spaces in between. This means that x is represented in memory as :
+
+   variable name        address        value 
+
+        X                10568           12 
+                                         13
+                                         14
+                                         ??
+                                         ??
+
+   That is, x is five ints big, and has a single address.
+
+   The weired part about arrays isn't how they're stored - it's how they're evaluated in expressions. if you use an array name somewhere that it isn't the subject of 
+   the unary & or sizeof operators, it evaluates to the address of its first member.
+
+   that is, if you just write x, you will get a value 10568 with type int *.
+
+   if, on the other hand you write &x, then the special rule doesn't apply - so the & operator works like it normally does, which means that it fetches the address of
+   an array. in the example, this will be a value 10568 with type int (*)[5]
+
+   The reason that x == &x is that the address of the first member of an array is necessarily equal to the address of the array itself, since an array starts with its
+   first member.
+
+
+3. A 2D array is stored in the computer's memory one row following other.
+
+   * The address of the first byte of memory is considered as the memory location of the entire 2D array.
+
+   * Knowing the address of the first byte of memory, the compiler can easily compute to find the memory location of any other elements in the 2D array provided the
+     number of columns in the array is known.
+
+
+     if each data value of the array requires B bytes of memory, and if the array has C columns, then the memory location of an element such as score[m][n] is (m*c+n)*B
+     from the address of the first byte.
+
+    * Note that to find the memory location of any element, there is no need to know the total number of rows in the array, i.e. the size of the first dimension 
+      of course the size of the first dimension is needed to prevent reading or storing that is out of bounds.
+
+    * Again one should not think of a 2D array as just an array with two indexes. you should think of it as an array of arrays.
+
+    * Higher dimensional arrays should be similarly interpreted. For example a 3D array should be thought of as an array of arrays. To find the memory location of any
+    element in the array relative to the address of the first byte, the size of all dimensions other than the first must be known.
+
+    * Knowledge of how multidimensional arrays are stored in memory helps one understand how they can be initialized, and how they can be passed as function arguments.
+
+
+
+4.  a single dimension, even if it's sufficient, does not always yield useful models. For example, a 2-dimensional euclidean line would be non-continuous when mapped
+    to a space-filling curve.
+
+    it's the same with multidimensional arrays- they're used not because they're inherently neccessay, but because they're a useful model.
+
+     FOR EXAMPLE, LET'S TAKE AT HOW ONE MIGHT MODEL A MOVIE 
+
+     * A movie is nothing more than a time-varying sequence of images - i.e.,  an array of images.
+
+     * Each image is a two-dimensional array, with each element of the array representing a color.
+
+     * a color has three components 
+    
+         Red
+         green
+         blue
+
+    so a movie can be modeled as a multidimensional array.
+
+5. In computer programming, a matrix can be defined with a 2-dimensional array. Any array with 'm' columns and 'n' rows represent a m x n matrix. there may be a
+    situation in which a matrix contains more numbers of ZERO values than NON-ZERO values. such matrix is known as sparse matrix.
+
+    when a sparse matrix is represented with a 2-dimensional array, we waste a lot of space to represent that matrix. for example, consider a matrix of size 100 x 100
+    containing only 10 non-zero elements. In this matrix, only 10 spaces are filled with non-zero values and remaining spaces of the matrix are filled with zero.
+    That means, totally we allocate 100 x 100 x 2 = 20000 bytes of space to store this integer matrix, and to access these 10 non-zero elements we have to make 
+    scanning for 10000 times. To make it simple we use the following sparse matrix representation.
+
+
+6.  matrix                         -> points to base address to two-dimemsional array. since array decays to pointer .
+ 
+    *(matrix)                      -> points to first row of two-dimensional array.
+    *(matrix + 0)                  -> points to first row of two-dimensionalarray.
+    *(matrix + 1)                  -> points to second row of two-dimensional array.
+
+    **matrix                       -> points to matrix[0][0]
+    *(*(matrix + 0))               -> points to matrix[0][0]
+    *(*(matrix + 0) + 0)           -> points to matrix[0][0]
+    *(*matrix  + 1)                -> points to matrix[0][1]
+    *(*(matrix + 0) + 1)           -> points to matrix[0][1]
+    *(*(matrix + 2) + 2)           -> points to matrix[2][2]
+
+ 
+7.  sparse matrices are the special case of full matrices, but they are extremely useful in some mostly practical problems.
+
+    A good illustration of the role of sparse matrices is so-called Netflix problelm, where you have a user-movie matrix with whole bunch of zeros and you want to 
+    build a recommender system. storing this matrix (let alone building a recommender system) as it is requires #users * #movies. Now there are around 100M users and
+    over 10K titles, including movies, tv shows, documentaries, etc. storing 10^12 elements is not efficient, if possible at all. Here comes sparse matrices for
+    efficiently storing this type of data. the first and most computationally costly step to build a recommender system is to compute the SVD of given sparse matrix. 
+    once it was computed then it can be updated using efficient low-rank update techniques after new user or movie was added.
+ 
+    The matrices with O(n) non-zero entries reduce the complexity of any matrix operations by n, but this type of matrices are not very typical in pratical problems.
+    Nevertheless, there are algorithms that allow to solve sparse linear system of equation and compute few largest or smallest eigenvalues of huge matrices that
+    cannot be stored as full matrices. These two problems are the fundamental problem in linear algebra. Moreover, it is also that LU, QR or other decompositions of 
+    a dense matrix produce sparse matrices which can be efficiently stored and be used afterwards.
+
+    There are 4 essential ways to store them:
+
+    * COO (coordinate format)
+
+    The simplest format is to use coordinate format to represent the sparse matrix as positions and values of non-zero elements. you need only 3 arrays :
+
+    i, j, val
+
+    where i, j are integer array of indices, val is the real array of matrix elements. so storing 3nnz elements is enough for matrix description, where nnz is the
+    number of non-zero elements.
+
+    * CSR (compressed sparse row) or CSC (compressed sparse column)
+
+    In the CSR format a matrix is stored as 3 different arrrays :
+
+    ia, ja, sa 
+
+     where :
+
+    * ia (row start) is an integer array of length
+    * ja (column indices) is an integer array of length nnz
+    * sa (values) is an real-value array of length nnz
+
+    so, we got 2 nnz + n + 1 elements
+
+    The CSR is optimal for matrix-by-vector product, this can be done as follows :
+
+    for i in range(n):
+            for k in range(ia[i] : ia[i + 1]):
+                y[i] += sa[k] * x[ja[k]]
+
+    * LIL (List of lists) 
+
+     LIL format stores one list per row, with each entry containing the column index and the value. A proper sorting (say, by column index) allows to find element 
+     faster than looking up for nnz elements.
+
+    * Block variants 
+
+     overall, the general format recommendation for sparse matrix storage is CSR or CSC. The main advantages of this format are optimal storage and optimal matrix-by-
+     vector product. The latter is very important in linear algebra, optimization.
+
+
+8.  Base(arr) = 1000
+
+     1000 + (35 * 2)
+     1000 + 70
+     1070
+
+9.  base address = 2000
+
+    2000 + 2 * (8 * 5)  
+    2000 + 2 * 40
+    2000 + 80
+    2080
+
+
+10. consider the below array declaration,
+ 
+    int arr[5];
+
+    it declares an integer array with a capacity of five elments. To access any element of the given array we use array index notation. For example to access zeroth 
+    element we use arr[0], similarly to access fifth element we use arr[4].
+
+    let us transform things in the context of pointers
+ 
+    int * ptr = &arr[0];
+
+    The above statement declares an integer pointer pointing at zeroth array element.
+
+    In c programming, array exhibits a special behaviour. Whenever you refer an array name directly, is behaves a pointer pointing at zeroth array element. which means
+    both of the below statement are equivalent.
+
+    int * ptr = &arr[0];
+    int * ptr = arr;
+
+    This special behaviour of array allows many interesting things to happen. Things such as you can interchangeably use array and pointers. you can also use array 
+    name as a pointer pointing at zeroth element. In context of array and pointer, all of the following statements are valid. 
+
+    int arr[5];
+    int * ptr = arr;
+ 
+    arr[0] = 10; // stores 10 at 0th element of array
+    arr[1] = 20; // stores 20 ar 1st element of array 
+
+    ptr = arr;  // ptr and arr both points to 0th element of array
+    *ptr = 100; // stores 100  at 0th element of array (since ptr points at arr[0])
+    *arr = 100; // stores 100 at 0th element of array 
+
+
+11. In computer programming, an array of pointers is an indexed set of variables in which the variables are pointers ( a reference to a location in memory).
+
+    pointers are an important tool in computer science for creating, using, and destroying all types of data structures. An array of pointers is useful : it allows 
+    you to numerically index a large set of variables.
+
+    Below is an array of pointers in c that sets each pointer in one array to point to an integer in another and then print the value of the integers by dereferencing
+    the pointers. In other words, this code prints the value in memory of where the pointers point.
+
+    #include <stdio.h>
+    
+    const int ARRAY_SIZE = 5;
+
+    int main()
+    {
+  
+      //first, declare and set an array of five integers : 
+
+      int array_of_integers[] = {5, 10, 20, 40, 80};
+
+     // next, declare an array of five pointers-to-integers :
+
+      int i, *array_of_pointers[ARRAY_SIZE];
+
+     for (i = 0; i < ARRAY_SIZE; i++)
+     {
+      
+       // for indices 1 through 5, set a pointer to point to a corresponding integer 
+       
+       array_of_pointers[i] = &array_of_integers[i];
+     }
+
+     for (i = 0; i < ARRAY_SIZE; i++)
+     {
+ 
+       // print the values of the integers pointed to by the pointers :
+  
+        printf("array_of_integers[%d] = %d\n", i, *array_of_pointers[i]);
+      }
+
+      return 0;
+
+     }
+
+
+12. When a function gets executed in the program, the execution control is transferred from calling a function to called function and executes function defination, and
+    finally comes back to the calling fuction. In this process, both calling and called functions have to communicate with each other to exchange information. The
+    process of exchanging information between calling and called functions is called inter-function communication.
+
+
+
+13. base address = 1000 
+    
+    1000 + 2 * (8 * 5)
+    1000 + 2 * 40
+    1000 + 80
+    1080
+
+14  (1) 7
+    (4) 6
+    
+
+15 (a) the starting index is initiliazed and the last index element contain garbase value 
+   (b) give the error.
+
+
+
+
+
+
+
+   MULTIPLE-CHOICE QUESTIONS 
+
+
+1. (b) 2
+2. (b) 7
+3. (d) 400
+4. (d) 0
+5. (b) 25
+6. (d) All of these 
+
+
+
+
+
+
+   TRUE OR FALSE 
+
+
+1. True 
+2. True
+3. True
+4. False
+5. False
+6. True
+7. True
+8. True
+9. False
+10. True 
+11. True
+12. False
+13. False
+14. False
+15. True  
+
+
+
+  FILL IN THE BLANKS 
+
+
+1. index or subscript
+2. consecutive
+3. n
+4. pointer
+5. name, data type, size 
+6. base address
+7. The number of elements stored in it 
+8. array of arrays
+9. integeral value
+10. fourth     
