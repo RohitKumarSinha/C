@@ -1,0 +1,286 @@
+1. Today's modern applications need complex data structures to support them . A structure is a collection of related data items of different data types. it extends the
+   concept of arrays by storing related information of heterogenous data types together under a single name. it is useful for the applications that need a lot more 
+   features than those provided by the primitive data types.
+
+
+2. The structure declaration, however does not allocate any memory or consumer storage space. it just gives a template that conveys to the C compiler how the structure
+   would be laid out in the memory and also gives the details of the of the member names like any other data type, memory is allocated for the structure when we declare
+   a variable of the structure.
+
+
+3.  The major difference between a structure and an array is that an array can store only information of same data type.
+
+
+5. The typedef (derived from type defination) keyword enables the programmer to create a new data type name by using an existing data type. By using typedef, no new 
+   data is created, rather an alternate is given to a known data type. The general syntax of using the typedef keyword is given as :
+
+    typedef existing_data_type new_data_type;
+  
+   Note that typedef statement does not occupy any memory ; it simply defines a new type. For example, if we write 
+
+   typedef int INTEGER;
+
+   the INTEGER is the new name of data type int. To declare variables using the new data type name, precede the variable name with the data type name (new). Therefore,
+   to define an integer variable, we may now write
+
+    INTEGER num = 5;
+
+
+6. A structure can be initialized in the same way as the other data types are initialized. initializing a structure means assinging some constants to the members of
+   the structure. when the user does not explicitly initialize the structure, then c automatically does it. For int and float members, the values are initialized to
+   zero, and char and string members are initialized to '\0' by default. 
+ 
+   The initializers are enclosed in braces and are seprated by commas. However, care must be taken to ensure that the initializers match their corresponding types
+   in the structure defination 
+
+   The general syntax to initialize a structure variable is as follows :
+
+   struct struct_name 
+   {
+     data_type member_name1;
+     data_type member_name2;
+     data_type member_name3;
+     ........................ 
+
+   }struct_var = {constant1, constant2, constant3,....}
+
+
+   For example, we can initialize a student structure by writing,
+
+   struct student
+   {
+     int r_no;
+     char name[20];
+     char course[20];
+     flat fees;
+   
+   }stud1 = {01, "rohit", "BCA", 4500};
+
+  
+   when all members of a structure are not initialized, it is called partial initializatio. In case of partical initization, first few members of the structure are 
+   initialized and those that are uninitialized are assigned default values.
+
+
+7. yes, it is possible to create an array of structures .
+
+   In a class, we do not have just one student. But there may be at least 30 students. so, the same defination of the structure can be used for all the 30 students. 
+   This would be possible when we make an array of structures. An array of structures is declared in the same way as we declared as array of a built-in data type.
+
+   another example where an array of structures is diserable is in case of an organization. An organization has a number of employees. So, defining a seprate structure
+   for every employee is not a viable solution. so here we can have a common structure defination for all the employees. This can again be done by declaring an array 
+   of structure employee .
+
+   A student array can be declared by writting 
+
+    struct student stud[30];
+
+    Now, to assign values to ith student of the class, we will write 
+  
+    stud[i].r_no = 09;
+    stud[i].name = "rohit";
+
+
+8. similar to structures, a union is a collection of variables of different data types. To better understand a unions, think of its as a chunk of memory that is used to store variables of 
+   different types. when a new value is assigned to a field, the existing data is replaced with the new data.
+
+   Thus, unions are used to save memory. They are useful for applications that involve multiple members, where values need not be assigned to all the members at any 
+   time.
+
+
+9. The only difference between a structure and a union is that in case of unions, you can only store information in one field at one time 
+
+
+11. A member of a function of a union can be accessed using the same syntax as that of a structure. To access fields of a unions, use the dot operator (.) i.e., the 
+    union variable name followed by the dot operator followed by the member name.
+
+
+12. A structure can be placed within another structure, i.e., a structure may contain another structure as its member. A structure that contains another structure as 
+    its member is called a nested structure.
+
+    Let us now see how we declare nested structures. Althrough it is possible to declare a nested structure with one declaration, it is not recommended. The easier and
+    clearer way is to declare the structures separately and then group them in the higher level structure. when you do this, take care to check the nesting must be 
+    done from inside out (from lowest level to the most inclusive level), i.e., declare the innermost structure, then the next level structure, working towards the
+    outer (most inclusive) structure
+
+    typedef struct 
+    {
+      char first_name[30];
+      char mid_name[30];
+      char last_name[30];
+
+    }NAME; 
+
+    
+   typedef struct
+   {
+
+    int dd;
+    int mm;
+    int yy;
+
+   }DATE;
+
+
+   typedef struct
+   {
+
+     int r_no;
+     NAME name;
+     char course[30];
+     DATE DOB;
+     float fees;
+
+   }student;
+
+  
+   in this example, we see that the structure student contains two other structures, NAME and DATE. Bothe these structures have its own fields. the structure NAME has
+   three fields : first_name, mid_name and last_name. The structure DATE also has three fields : dd, mm, and yy which specify the day, month, and year of the date. 
+
+   Now to assign values to the structures fields, we will write 
+
+   student stud1; 
+  
+   stud1.r_no = 01; 
+  
+   stud1.name.first_name = "rohit";
+ 
+   stud1.name.mid_name = "kumar";
+
+   stud1.name.last_name = "sinha".
+
+   stud1.course = "BCA"
+   
+   stud1.DOB.dd = 19;
+
+   stud1.DOB.mm = 05;
+ 
+   stud1.DOB.yy = 1998;
+
+   stud1.fees = 20000;
+
+  in case of nested structures, we use the dot operator in conjuction with the structure variables to access the members of the innermost as well as outermost 
+  structures. The use of nested structures is illustrated in next program.
+
+
+13. Generally, uniouns can be very useful when declared inside a structure. consider an example in which you want a field of a structure to contain a string or integer
+    depending on what the user specifies. The following code illustrates such a scenario:
+
+    #include <stdio.h>
+
+    struct student 
+    {
+      union
+      {
+
+         char name[20];
+         int roll_no;
+       };
+
+       int marks;
+
+      };
+
+     
+    int main()
+    {
+
+
+      struct student stud;
+
+      char choice;
+  
+      printf("\n you can enter the name or roll number of the student");
+      printf("\n do you want to enter the name ? (Y or N): ");
+
+     gets(choice) 
+
+     if (choice == 'y' || choice == 'Y')
+     {
+
+       printf("\n enter the name : ");
+       gets(stud.name);
+ 
+     }
+
+     else
+     {
+
+       printf("\n enter your roll no : "):
+       scanf("%d", &stud.name);
+
+     }
+
+     printf("\n Enter the marks : ");
+     scanf("%d", &stud.marks);
+
+     if (choice == 'y' || choice == 'Y')
+         printf("\n Name %s ", stud.name)'
+
+     else
+       printf("\n Roll number : %d", stud.roll_no;
+
+     printf("\n Marks : %d", stud.marks);
+
+     return 0;
+
+  }
+
+
+   
+
+   
+   MULTIPLE-CHOICE QUESTION 
+
+ 
+1. (c) structure 
+2. (c) structure 
+3. (b) structure variable declaration
+4. (b) dot operator 
+5. (b) nested structure
+6. (b) dot operator
+7. (d) all of these 
+
+
+
+  
+
+   TRUE OR FALSE 
+
+
+1. false
+2. true
+3. true
+4. false
+5. true
+6. true
+7. true
+8. false
+9. false
+10. true
+11. false
+12. true
+13. true
+14. false
+
+
+   
+ 
+
+   FILL IN THE BLANKS 
+
+
+1. primitive
+2. structure defination
+3. structure name
+4. opening braces and closing braces
+5. 0
+6. '\0'
+7. dot operator
+8. nested structure
+9. refrencing structure
+10. structure variable declaration
+11. union
+12. structure pointer
+13. union
+
+ 

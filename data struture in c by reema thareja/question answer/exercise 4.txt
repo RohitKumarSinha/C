@@ -1,0 +1,353 @@
+1. In c, a string is a null-terminated character array. this means that after the character, a null character('\0') is stored to signify the end of the character array
+   
+   OPERATIONS ON STRINGS 
+
+   * finding length of a string 
+   * converting characters of a string into upper/lower case
+   * Appending a string to another string 
+   * comparing two strings
+   * Reversing a string
+   * Extracting a substring from a string
+   * inserting a string in the main string
+   * pattern matching
+   * deleting a substring from the main string
+   * replacing a pattern with another pattern in a string 
+
+
+2. if we write 
+
+   char str[] = "Hello";
+
+   then we are declaring an array that has five characters, namely, H, E, L, L, and O. Apart from these characters, a null character ('\0') is stored at the end of
+   string. so, the internal representation of the string becomes HELLO'\0'. To store a string of length 5, we need 5 + 1 location (1 extra for the null character). The
+   name of the character array (or the string) is a pointer to the beignning of the string.
+
+   Below shows how str[] is stored in the memory 
+
+   str[0]   1000     H
+   str[1]   1001     E
+   str[2]   1002     L
+   str[3]   1003     L
+   str[4]   1004     o
+   str[5]   1005     \0
+  
+   MEMORY REPRESENTATION OF A CHARACTER ARRAY  
+
+   Thus, in simple terms, a string is a sequence of characters. In Fig 4.2 1000, 1001, 1002 etc., are the memory addresses of individual characters. For simplicity,
+   the figure shows that H is stored at memory locations 1000 but in reality, the ASCII code of a character is stored in the memory and not the character itself. so, 
+   at address 1000, 72 will be stored as ASCII code H is 72.
+
+
+
+3. if we declare a string by writing 
+   
+      char str[100];
+
+    Then str can be read by the user in three ways :
+
+    1. using scanf function.
+    2. using gets() function, and
+    3. using getchar(), getch() or getche() function repeatedly
+
+ 
+    strings can be read using scanf() by writing
+
+    scanf("%s", str);
+
+    Althrough the syntax of using scanf() function is well known and easy to use, the main pitfall of using this function is that the function terminates as soon as it
+    finds a blank space. for example, if the user enters Hello world, then the str will contain only Hello. This is because the moment a blank space is encountered, 
+    the str will contain only Hello . This is because the moment a blank space is encounterd, the string is terminated by the scanf() function. you may also specify
+    a field width to indicate the maximum number of characters that can be read. Remember that extra characters are left uncosumed in the input buffer.
+
+    unlike int, float and char value %s format does not require the ampersand before the variable str.
+
+    The next method of readings a string is by using the gets() function. The string can be read by writing 
+
+    gets(str);
+
+    gets() is a simple function that overcomes the drawbacks of the scanf() function. the gets() function takes the starting address of the string which will hold the
+    input. the string inputted using gets() is automatically terminated with a null character.
+
+    strings can also be read by calling the getchar() function repeatedly to read a sequence of single characters (unless a terminating character is entered) and 
+    simultaneously storing it in a character array as shown below.
+
+    i = 0;
+    ch = getchar; // get a character
+    while (ch != '*')
+    {
+      str[i] = ch; // stores the read character in str 
+      i++;
+
+      ch = getchar(); // get another character 
+
+    }
+
+    str[i] = '\0'; // terminates str with null character 
+
+    Note that in this method, you have to deliberately append the string with a null character. the two functions automatically do this.
+
+ 
+
+4. strings can be displayed on the screen using the following three ways :
+
+   1. using printf() function, 
+   2. using puts() function, and 
+   3. using putchar() function repeatedly.
+
+   strings can be displayed using printf() by writing 
+
+   printf("%s", str);
+
+   we use the format specifiers %s to output a string. observe carefully that there is no '&' character used with the string variable. we may also use width and 
+   precision specifications along with %s. The width specifies the minimum output field width. if the string is short, the extra space is either left padded or right
+   padded. A negative with left padded or right padded. A negative width left pads short strings rather than the default right justification. The precision specifies
+   specifies the maximum number of characters to be displayed, after the string is truncated. For example.
+
+   printf("%5.3s", str);
+
+   The above statement would print only the three characters in a total filed of five characters. Also these characters would be right justified in the allocated width.
+   To make the string left justified, we must use a minus sign. For example,
+
+   printf("%5.-3s", str);
+
+   
+   The next method of writing a string is by using puts() function. A string can be displayed by writing 
+ 
+   puts(str);
+
+   puts() is a simple function that overcomes the drawbacks of the printf() function.
+
+   strings can also be written by calling the putchar() function repeatedly to print a sequence of single characters.
+
+   i = 0;
+   while (str[i] != '\0')
+   {
+     putchar (str[i]); // print the character on the screen 
+     i++;
+   }
+
+
+
+5. syntax of scanf() in string is :
+
+   scanf("%s", str);
+
+   syntax of printf() in string is :
+
+   printf("%s", str);
+
+
+6. the substrings are :
+   
+   AA
+   AB
+   AC
+   AD
+   BA
+   BB
+   BC
+   BD
+   CA
+   CB
+   CC
+   CD
+   DA
+   DB
+   DC
+   DD
+
+
+7. This operation returns the position in the string where the string first occurs, for example,
+  
+   INDEX("Welcome to the world of programming", "world") = 15
+
+   However, if the pattern does not exist in the string, the INDEX function returns 0 
+
+   below shows an algorithm to find the index of the first occurence of a string within a given text 
+
+   step 1: [INITIALIZE] SET I = 0 and MAX = Length(TEXT) - Length(STR) + 1 
+
+   step 2: Repeat steps 3 to 6 while I < MAX 
+
+   step 3:   Repeat step 4 for K = 0 to Length (STR) 
+   
+   step 4:      IF STR[K] != TEXT[I + K], then Goto step 6 
+
+            [END OF INNER LOOP]
+
+   step 5: SET INDEX = I Goto step 8
+
+   step 6: SET I = I + 1
+
+   step 7: SET INDEX = -1
+
+   STEP 8: EXIT 
+
+   Algorithm to find the index of the first occurence of a string within a given text 
+
+
+8. suppose that there are 20 students in a class and we need a string that stores the names of all the 20 students. How can this be done ? Here. we need a string of 
+   strings or an array of strings. such an array of strings would store 20 individual strings. An array of strings is declared as 
+
+   char names[20][30];
+
+   Here, the first index will specify how many strings are needed and the second index will specify the length of every individual string. So here, we will allocate
+   space space for 20 names where each can be maximum 30 characters long.
+
+  
+
+
+9.  Let us see the memory representation of an array of strings, if we have an array as 
+
+   char name[5][10] = {"Ram, "Mohan", "shyam", "Hari", "Gopal"};
+
+   Then in the memory, the array will be stored as shown below :
+
+   name[0] R  A  M '\0'
+   name[1] M  o  H  A  N  '\0'
+   name[2] S  H  Y  A  M  '\0'
+   name[3] H  A  R  I  '\0'
+   name[4] G  O  P  A  L  '\0'
+
+
+   By declaring the array names, we allocate 50 bytes. But the actual occupied is 27 bytes. we see that about half of the memoty allocated is wasted.
+
+
+10. #include <stdio.h> 
+    
+    int main()  
+    {
+     char str[] = "Hello";
+     char *pstr;
+    
+     printf("\n The string is : ");
+   
+     while (*pstr !=  '\0')
+     {
+       printf("%c", *pstr);
+       *pstr++;
+     }
+   
+      return 0;
+
+     }
+
+    Output 
+  
+    The string is : Hello
+
+    In this program, we declare a character pointer *pstr to show the string on the screen. We then point the pointer pstr to str. Then, we print each character of the
+    string using the while loop. Instead of using the while loop, we could straightway use the function puts() as shown below 
+  
+    puts(pstr);
+
+    This function prototype for pus() is as follows :
+ 
+    int puts(const char *s);
+
+    Here the const modifier is uesd to assure that the fuction does not modify the contents pointed to by the source pointer. The address of the string to the function
+    as an argument.
+
+    The parameter passed to puts() is a pointer which is nothing but the address to which it points to or simply an address. Thus, writing puts(str) means passing the
+    address of str[0]. similarly when we write puts(pstr); we are passing the same addresses , because we have written pstr = str;
+
+
+11. e to worl
+
+
+12. "welcome to world C programming" 
+
+ 
+13. scanf() function is well known and easy to use, the main pitfall of using this function is that the function terminates as soon as it finds a blank space. For 
+    example if the user enters Hello World, then the str will contain only hello. This is because the moment a blank space is encountered, the string is terminated by 
+    the scanf() function.
+
+    gets() is a simple function that overcomes the drawbacks of the scanf() function. The gets() function takes the starting address of the string will hold the input.
+    the string using gets is automatically terminated with a null character
+
+
+14. scanf() function  
+   
+    the main pitfall of using this function is that the function terminates as soon as it finds a blank space. For 
+    example if the user enters Hello World, then the str will contain only hello. This is because the moment a blank space is encountered, the string is terminated by 
+    the scanf() function.
+
+    getchar() function
+
+    in this method, you have to deliberately append the string with a null character. The scan() function automatically do this.
+
+
+15.  we use gets() function to overcoming the shortcomping of getchar()  and scanf() function 
+
+16.  The gets() function takes the starting address of the string will hold the input.
+     the string using gets is automatically terminated with a null character
+
+
+17. a character contain a single character but a string contains array of characters 
+    
+    format specifier of character is %c but the format specifier of string %s 
+
+ 
+18. character array and a string almost same but the basic difference is character array use %c format specifief and string use %S format specifier
+
+
+
+
+
+     MULTIPLE-CHOICE QUESTIONS 
+
+
+1. (B) XPPPXXYYYZZZ
+2. (C) XXXYZZ
+3. (A) world 
+4. (C) string.h 
+5. (d) all of these 
+6. (a) XXABYYZZZ
+7. (C) 7
+8. (B) str(s1(strcat(s2, s3))
+9. (b) 23
+10.(b) strcat 
+
+
+    TRUE OR FALSE 
+
+
+1. FALSE
+2. FALSE
+3. TRUE 
+4. TRUE
+5. TRUE
+6. TRUE
+7. TRUE
+8. TRUE
+9. TRUE
+10. FALSE
+11. TRUE
+12. FALSE
+13. FALSE
+14. TRUE
+15. TRUE
+
+
+
+   FILL IN THE BLANKS 
+
+
+1. array of characters
+2. NULL character
+3. 5
+4. 0
+5. consecutive
+6. 99
+7. scanf() function
+8. integers
+9. convert upper case into lower case
+10. s1 is alphabetically lower down s2
+11. strrev() function
+12. RNING 
+13. "welcome to the of programming"
+14. INDEX
+15. both strings are not equal
+16. strlen() function
+17. puts(), putchar()
+
