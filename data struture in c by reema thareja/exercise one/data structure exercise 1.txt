@@ -1,0 +1,623 @@
+1. BASIC STRUCTURE OF A C PROGRAM 
+  
+   Documentation section                              ------------------------------> // sample prog created by : Bsource
+         [used for comments]
+
+   Link section                                       ------------------------------> #include <stdio.h>
+                                                                                      #include <conio.h>
+   
+   Defination section                                 ------------------------------> void fun();
+
+   Global declaration section                         ------------------------------> int a = 10;
+    [variables used in more than one funtion]
+
+   main()                                             ------------------------------> void main()
+   {                                                                                   {
+    Declaration part                                                                     clrscr();
+    Executable part                                                                      printf("a value inside main() : %d", a);
+    }                                                                                    fun();
+                                                                                         }
+
+    subprogram section                                  --------------------------------> void fun()
+      [user-defined Function]                                                              {
+            Function 1
+            Function 2                                                                      printf("\na value inside fun() : %d", a);
+               |
+               |                                                                            }
+               |
+            Function n
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+   Documentation section :- The documentation section consists of a set of comment lines giving the name of the program, the author and other details, which the
+   programmer would like to use later.
+
+   Link section :- The Link section provides instructions to the compiler to link functions from the system library.
+
+   Defination section :- The defination section defines all symbolic constants.
+
+   Global declaration section :- There are some variables that are used in more than one fuctions. such variables are called global variables and are declared in the
+   global declaration section that is outside of all the functions. This section also declares all the user-defined functions.
+
+   main() function section : Every c program must have one main function section. This section contains two part. 
+   
+   Declaration part : The declaration part declares all the variables used in the executable part.
+
+   executable part : There is at least one statement in the executable part. These two parts must appear between the opening and closing braces. The program execution
+   begins at the opening brace and ends at the closing brace. The closing brace of the main function is the logical end of the program. All statements in the 
+   declaration and executable part end with a semicolon.  
+
+2. Declaration of a variable is for informaing to the compiler the following information: name of the variable, types of value it holds and the initial value if any 
+   takes, i.e., declaration gives details about the properties of a variable. whereas, Defination of a variable says where the variable gets stored. i.e., memory for
+   the variable is allocated during the defination of the variable. 
+
+3. Memory is reserved using data type in the variable declaration. A programming language implementation has predefined sizes for its data types. 
+   For example, in C# the declaration int i; will reserve 32 bits for variable i.
+   A pointer declaration reserves memory for the address or the pointer variable, but not for the data that it will point to. The memory for the data pointed by a 
+   pointer has to be allocated at runtime.
+   The memory reserved by the compiler for simple variables and for storing address allocated on the stack, while the memory allocated for pointer referenced data at 
+   runtime allocated on the heap.
+
+4. Keyword
+   
+   Keyword are reserved words that have special meaning in c language. The meaning has already been described. These meaning cannot be changed. There are total 32
+   keywords in c language.
+
+   Identifiers 
+ 
+   In c language identifiers are the names given to variables, constants, functions and user-defined data. These identifiers are defined against a set of rules.
+
+5. Variables 
+ 
+   In a programming, a variable is a container (storage area) to hold data.
+   To indicate the storage area, each variable should be given a unique name (identifiers) .
+
+   C has several types of variables, but there are a few basic types:
+   
+   *integers - whole numbers which can be either positive or negative.
+    Defined using chars, int, short, long or long long. 
+
+   *Unsigned integers - whole numbers which can only be positive.
+    Defined using unsigned char, unsigned int, unsigned short, unsigned long or unsigned long long.
+   
+   *Floating point numbers - real numbers (numbers with fractions) .
+    Defined using Float and double.
+
+   Constants / Literals
+   
+   A constant is a value (or an identifier) whose value cannot be altered in a program. For example: 1, 2.5, 'c' etc.
+
+6. The data type of a value (or variable in some contexts) is an attribute that tells what kind of data that value can have... Data types include the storage 
+   classifications like integers, floating point values, strings, characters etc.
+
+7. In C programming, variables (memory location) should be declared before it can be used. similarly, a function also needs to be declared before use. 
+   Data types simply refers to the type and size of data associated with variables and functions.
+   Data type can be either fundamental (provided in C compiler), or derived (derived from fundamental data types).
+
+   Fundamental data types 
+
+   This section focuses on commonly used fundamental data types. 
+
+   Int 
+   
+   integers are whole numbers that can have both zero, positive and negative values but no decimal values. Examples: 0, -5, 10.
+
+   float and double 
+
+   float and double are used to hold real numbers.
+   The size of float (single precision float data type ) is 4 bytes. And the size of double (double precision float data type ) is 8 bytes. 
+
+   Char 
+   
+   keyword char is used for declaring character type variables. 
+
+   void 
+   
+   void is an incomplete type. it means "nothing" or "no type" . You can think of void as absent.
+   for example, if a function is not returning anything, its return type should be void. 
+
+   bool 
+   
+   Traditionally, there was no boolean type in C. however, C99 defines a standard boolean type under <sdbool.h> header file . A boolean type can take one of two values
+   either true or false.
+
+   enum 
+   
+   you can create an enumerated type using enum keyword. An enumeration consists of integral constants.
+
+   complex types 
+   
+   in ISO c99, support for the complex type was standardized. 
+   if you include complex.h header file in your program, you can use complex as keyword to create and work with complex numbers.
+
+   short and long
+   
+   if you need to use large number, you can use type specifier long.
+   if you are sure, only a small integer ([-32, 767, +32, 767] range) will be used, you can use short.
+
+   signed and unsigned 
+   
+   in c, signed and unsigned are type modifiers. you can alter the data storage of a data type by using them. 
+
+   Derived types 
+   
+   *array type
+   *pointer type
+   *structure type
+   *union type
+   *Function type
+   *Atomic type 
+
+ 
+8. stdio.h is the header file for standard input output... stdio.h is a header file which contains function definations for all input output functions like printf, 
+   scanf, gets, puts, fetch etc which are been called by the programmer in the program for accepting and display input and output.
+
+9. A header file is a library of a no. of functions, which could be used (once or more than once) in some or the other programs. Thus, instead of defining all functions
+   separately we can assemble them in a single library, the header file. These can be predefined or user defined. Hence, it reduces the line of codes and also the 
+   complexity.
+
+   the include directive allows libraries of code to be developed with help to :
+
+   * ensures that everyone uses the same version of a data layout defination of procedural code throughout a program.
+   * easily cross-reference where components are used in a system.
+   * easily change programs when needed (only one master copy to change).
+   * save time by not needing to code extensive data layouts (minor, but useful) 
+
+
+10. Two commonly used functions for I/O (input/output) are printf() and scanf(). The scanf() function reads formatted input from standard input (keyboard) whereas the
+    printf() function sends formatted output to the standard output (screen).
+
+
+11. An operator is a symbol which operates on a value or a variable. For example : + is an operator to perform addition 
+    c has wide range of operators to perform various operations.
+    
+    * c arithmetic operators
+    
+    An arithmetic operator performs mathematical operations such as addition, subtraction and mutiplication on numerical values (constants and variables)
+    arithmetic operator are +, -, *, / , %
+
+    * increment and decrement operators 
+     
+    c programming has two operators increment ++ and decrement -- to change the value of an operand (constant or variable) by 1.
+    increment ++ increases the value by 1 whereas decrement -- decreases the value by 1. These two operators are unary operators, meaning then only operate on a single
+    operand.
+    
+    * c assignment operator
+    
+    An assignment operator is used for assigning a value to a variable. The most common assignment operator is =.
+    assignment operator are =, +=. -=. *=, /=, %=
+
+    * c relational operators
+    
+    A relational operator checks that relationship between two operands. if the relation is true, it returns 1; if the relation is false, it returns value 0.
+    Relational operators are used in decision making and loops.
+    Relational operators are ==, >, <, !=, >=, <= 
+
+    * C logical operators 
+
+    An expression containing logical operator returns either 0 or 1. depending upon whether expression results true or false. Logical operators are commonly used in
+    decision making in c programming. logical operators are &&, ||, ! .
+
+    * C bitwise operators 
+    
+    During computation, mathematical operations like: adding, subtraction, multiplication and division are converted to bit-level which makes processing faster and 
+    saves power.
+    Bitwise operators are used in c programming to perform bit-level operations.
+    Bitwise operators are &, |, ^, ~, <<, >> 
+
+    * comma operator 
+    
+    comma operator are used to link related expression together.
+
+    * The sizeof operator
+  
+    the sizeof is an unary operator which returns the size of data (constant, variable, array, structure etc)
+    
+    * C ternary operator 
+    
+    Ternary operator is a conditional operator that works on 3 operands.  
+
+
+12.   operator Type                           operator 
+     
+      primary Expressions operators             (), [], ->, ., expr++, expr--
+
+      unary operators                          *, &, +, -, !, ++expr, --expr, (typecast), sizeof
+
+      Binary operators                         *, /, %, +, -, >>, <<, <, >, <=, >=, ==, !=, &, ^, |, &&, || 
+
+      Ternary operators                        ?:
+
+      Assignment operators                     =, +=, -=, *=, /=, %=, >>=, <<=, &=, ^=, |=
+
+      comma operators                          ,
+
+
+13. The two terms "type casting" and "type conversion" occur when there is a need to convert one data type to another. When the two types are compatible with each 
+    other, then the conversion of one type to other is done automatically by the compiler. However there is a basic difference between type conversion and type casting
+    i.e. type conversion is done "automatically" by the compiler whereas, type casting is to be "explicitly done" by the programmer.
+
+
+14. In any programming language, there is a need to perform different tasks based on the conditions. For example, consider an online website, when you enter wrong id 
+    or password it displays error page and when you enter correct credentials then it displays welcome page. so there must be a logic in place that checks the
+    condition (id and password) and if the condition return true it performs a task (displaying welcome page) else it performs a different task (displaying error page).
+    
+    using decision control statements we can control the flow of program in such a way so that it executes certain statements based on the outcome of a condition (i.e. 
+    true or false). In C programming language we have decision control statements.
+    
+    * if statement 
+    * if-else & else-if statement 
+    * switch - case statements 
+
+15. Iteration is the process where a set of instructions or statements is executed repeatedly for a specified number of time or until a condition is met. These 
+    statement also alter the control flow of the program and thus can also be classified as control statements in c programming language.
+
+    iteration statements are most commonly know as loops. Also the repetation process in c is done by using loop control instruction. 
+    there are three types of looping statements:
+    
+    * For loop
+    * while loop
+    * Do-while loop
+
+    * for loop
+
+    A for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times
+    The syntax of a for loop in c programming language is -
+    
+    for (init; condition; increment){
+         statement(s);
+
+    }
+
+
+    The init step is executed first, and only once. this step allows you to declare and intialize any loop control variables. you are not required to put a statement
+    here, as long as a semicolon appears.
+
+    Next, the condition is evaluated. if it is true, the body of the loop is executed. if it is false, the body of the loop does not execute and the flow of control
+    jumps to the next statement just after the 'for' loop.
+
+    After the body of the 'for' loop executes, the flow of control jumps back up to the increment statement. This statement allows you to update any loop control
+    variables. This statement can be left blank, as long as a semicolon appears after the condition.
+
+    The condition is now evaluated again. if it is true, the loop executes and the process repeat itself (body of loop, then increment step, and then again condition).
+    After the condition becomes false, the 'for' loop terminates. 
+ 
+    *while loop 
+  
+    A while loop in c programming repeatedly executes a target statement as long as a given condition is true .
+    The syntax of a while loop in c programming is - 
+     
+    while (condition) {
+        statement(s);
+     }
+
+    Here, statement(s) may be a single statement or a block of statements. The condition may be any expression, and true is any nonzero value. The loop iterates while
+    the condition is true.
+    when the condition becomes false, the program control passes to the line immediately following the loop.
+
+    * Do-while loop
+
+    unlike for and while loops, which test the loop condition at the top of the loop, the do...while loop in c programming checks its condition at the bottom of the
+    top.
+
+   A do...while loop is similar to a while loop, execpt the fact that it is guaranteed to execute at least one time. 
+    
+   The syntax of a do...while loop in c programming language is -
+   
+   do{
+      statement(s);
+   } while (condition);
+
+
+   notice that the conditional expression appears at the end of the loop, so the statement(s) in the loop executes once before the condition is tested.
+   if the condition is true, the flow of control jumps back up to do, and the statement(s) in the loop executes again. This process repeats until the given condition
+   becomes false.
+
+16. A switch statement is usually more efficent than a set of nested ifs. Deciding whether to use if-then-else statements or a switch statement is based on readability
+    and the expression that the statement is testing.
+
+    * checks the Testing expression : An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests 
+    expressions based only a single integer, enumerated value, or string object.
+
+    * switch better for multi way branching : When compiler compiles a switch statement, it will inspect each constants and creates  "jump table" that it will use for
+    selecting the path of execution depending on the value of the expression. Therefore, if we need to select among a large group of values, a switch statement will
+    run much faster than the equivalent logic coded using a sequence of if-elses. The compiler can do this because it knows that the case constants are all the switch
+    expression, while in case of if expressions, the compiler has no such knowledge.
+
+    * if-else better boolean values : If-else conditional branches are great for variable conditions that results into a boolean, whereas switch statements are great
+    for fixed data values.
+
+    * speed : A switch statement might prove to be fastet than ifs provided number of cases are good. if there are only few cases, it might not effect the speed in any
+    case. prefer switch if the number of cases are more than 5 otherwise, you may use if-else too.
+
+   if a switch contains more than five items, it's implemented using a lookup table or a hash list. This means that all items get the same access time, compared to 
+   a list of if:s where the last item takes much more time to reach as it has to evaluate every previous condition first.
+
+   * clarity in readability : A switch looks much cleaner when you have to combines case. ifs are quite vulnerable to errors too. Missing an else statement can land 
+   you up in havoc. adding/removing labels is also easier with a switch and makes your code significantly easier to change and maintain.
+
+
+
+17. A function is a group of statements that together perform a task. Every c program has at least one function, which is main(), and all the most trivial programs
+    can define additional functions. you can divide up your code into separate functions.
+    
+    This example highlights the two most important reasons that c programmers use functions. The first reason is reusability. once a function is defined, it can be 
+    used over and over and over again. you can invoke the same function many times in your program, which saves you work.
+
+18. in other words a function declaration declares the name of the function and the return type. you must declares an identifier before you can use it. A function
+    prototype is a declaration of a function that declares the types of the function's parameters and defines them. A function defination defines the function
+    itself.
+
+19. The declaration called the function prototype, tells the computer the name, return type, and parameters of the function. This statement is placed after #include
+    <iostream.h> (and other headers) and before.
+
+20. There are two types of functions in c language. A calling function and a called function. A calling function invokes the called function by supplying the required
+    arguments, if neccesary, to the called function . The calling function function receives the return value from the called function if there is one. Both of these
+    functions can be user defined or library functions. often a function gets invoked in main(), in which case, it becomes the called function and main() becomes the
+    calling function.
+
+21. call by value : in this parameter passing method, values of actual parameters are copied to function's formal parameters and the two types of parameters are stored
+    in different memory locations. so any changes made inside functions are not reflected in actual parameters of caller. 
+
+    call by reference : Both the actual and formal parameters refer to same locations, so any changes made inside the function are actually reflected in actual
+    parameters of caller.
+
+
+    call by value                                                                         call by reference
+
+    * while calling a function, we pass of variables to it. such functions               * while calling a function, instead of values of variables, we pass address of 
+    are known as "call by values" .                                                      variables (location of variables) to known as "call by References"
+
+   * in this method, the value of each variable in calling functions is                  * in this method, the address of actual argument in the calling function are
+   copied into corresponding dummy variables of the called function.                     copied into dummy variables of the function 
+  
+   * with this method, the changes made to the dummy variables in the                    * with this method, using addresses have to access to the actual variables
+   called function have no effect on the values of actual variables                      hence would be able to manipulate 
+   in the calling function
+
+    call by value example                                                                 call by reference examples 
+  
+    #include <stdio.h>                                                                    #include <stdio.h>
+    
+    // function prototype                                                                 // function prototype 
+    void swapx(int x, int y);                                                              void swapx(int * , int *);
+
+    // Main function                                                                      // Main function 
+    int main()                                                                            int main()
+    {                                                                                     {
+      int a = 10, b = 20;                                                                   int a= 10, b = 20;
+      
+     // pass by value                                                                     // pass by reference 
+     swapx(a, b);                                                                         swapx(&a, &b);
+
+     printf(" a = %d b = %d\n", a, b);                                                    printf(" a = %d b = %d\n", a, b);
+  
+     return 0;                                                                            return 0;
+    
+    }                                                                                     }
+
+
+   // swap functions that swaps two value                                                // function to swap two values call by reference 
+   void swapx (int x, int y)                                                             void swapx(int* x, int* y)
+   {                                                                                     {
+     int t;                                                                                int t;
+   
+     t = x;                                                                                t = *x;
+     x = y;                                                                                *x = *y;
+     y = x;                                                                                *y = t;
+  
+     printf(" x = %d y = %d\n", x, y);                                                     printf(" x = %d y = %d\n", x, y);
+
+    }                                                                                      }
+
+    output                                                                                output  
+
+    x = 20 y = 10                                                                         x = 20 y = 10
+    a = 10 b = 20                                                                         a = 20 b = 10  
+    
+
+22. pointers in c language is a variable that stores/points the address of another variable. A pointer in c is used to allocate memory dynamically i.e. at run time.
+    The pointer variable might be belonging to any of the data type such as int, float char, double, short etc.
+  
+    pointers syntax : data_type *var_name; Example; int *p, char *p;
+
+    where, * is used to denote that "p" is pointer variable and not a normal variable 
+
+    KEY POINTS TO REMEMBER ABOUT POINTER IN C:
+ 
+    normal variable store the value whereas pointer variable stores the address of the variable.
+
+    The content of the c pointer always be a whole number i.e. address.
+
+    Always C pointer is initialized to null, i.e. int *p = null.
+
+    The value of null pointer is 0.
+
+    & symbol is used to get the address of the variable.
+
+    * symbol is used to get the value of the variable that the pointer is pointing to.
+
+    if a pointer in c is assigned to NULL, it means it is pointing to nothing.
+
+    Two pointer can be subtracted to know how many elements are available between these two pointers.
+
+    But, pointer addition, multiplicatio, division are not allowed 
+    
+    The size of any pointer is 2 byte (for 16 bit compiler).
+
+    EXAMPLES PROGRAM FOR POINTERS IN C
+
+    #include <stdio.h>
+    int main() 
+    {
+      int *ptr, q;
+      q = 50;
+
+      // address of q is assigned to ptr
+      ptr = &q;
+     
+      // display q's value using ptr variable 
+      printf("%d", *ptr);
+ 
+      return 0;
+    
+     }
+
+23. Null pointer is a special reserved value of a pointer. A pointer of any type has such a reserved value. Formally, each specific pointer type (int *, char * etc.)
+    has its own  dedicated null-pointer value. conceptually, when a pointer has the null value it is not pointing anywhere.
+
+    void pointer is a specific pointer type - void * - a pointer that points to some data location in storage, which doesn't have any specific type.
+     
+    so, once again, null pointer is a value, while void pointer is a type. these concepts are totally different and non-comparable. That essentially means your
+    question, as stated, is not exactly valid. it is like asking, for example, "what is the difference between a triangle and a car?" .
+
+24. generic pointer is like master placeholder that can hold address of any type of data type .
+
+    void *gptr;
+    int i = 10;
+    char c = 'x';
+    gptr = &i; (valid operation);
+    gptr = &c; (valid operation);
+
+    while pointer variable is a variable which can hold address of a specific datatypes for which you can define type while declaration and it can hold address of that
+    type also.
+    
+    int *ptr; (you declared this pointer variable as of type int)
+    int i = 10;
+    char c = 'x';
+    ptr = &i; (valid operation)
+    ptr = &c; (invalid operation)
+
+25. we already know that a pointer points to a location in memory and thus used to store address of variables. so, when we define a pointer to pointer. The first
+    pointer is used to store the address of second pointer. That is why they are also known as double pointers.
+
+    HOW TO DECLATE A POINTER TO POINTER IN C?
+  
+    Declaring pointer to pointer is similar to declaring pointer in c. The difference is we have to place an additional '*' before the name of pointer.
+  
+    syntax:
+
+    int **ptr;        // declaring double pointers
+
+    let us understand this more clearly with the help of below program:
+
+    int main() 
+    {
+      int var = 789;
+
+    // pointer for var
+       int *ptr2;
+
+    // double pointer for ptr2
+       int **ptr1;
+
+    // storing address of var in ptr2
+       ptr2 = &var;
+
+    // storing address of ptr2 in ptr1
+       ptr1 = & ptr2;
+
+    // displaying value of var using
+   //  both single and double pointers 
+
+    printf("value of var = %d\n", var);
+    printf("value of var using single pointer = %d\n", *ptr2);
+    printf("value of var using double pointer = %d\n", **ptr1);
+
+    return 0;
+
+   }
+
+   output 
+
+   value of var = 789
+   value of var using single pointer = 789
+   value of var using double pointer = 789
+
+
+
+
+
+
+
+
+   MULTIPLE-CHOICE QUESTION
+
+ 
+1. (b) relational 
+2. (c) 3
+3. (d) Bitwise NOT
+4. (d) comma
+5. (b) %h
+6. (b) "A"
+7  (d) Floats
+8  (c) %
+9  (c) res = / 4
+10 (d) All of these
+11 (c) void
+12 (b) defined
+13 (c) num
+14 (a) &
+15 (b) *
+
+
+
+  TRUE OR FALSE 
+
+
+1. False
+2. True
+3. False
+4. False
+5. True
+6. False
+7. True
+8. False
+9. True
+10. False
+11. False
+12. False
+13. True
+14. True
+15. False
+16. False
+17. True
+18. False
+19. True
+20. False
+21. True
+22. True
+23. True
+24. True
+25. True
+
+  FILL IN THE BLANKS
+
+
+1. Dennis ritchie
+2. main()
+3. ASCII codes
+4. operating system
+5. modules operator (%)
+6. unary
+7. typecasting
+8. default case
+9. printf()
+10. closing bracket
+11. \n
+12. const
+13. sizeof
+14. %hd
+15. %x
+16. _
+17. calling function
+18. calling function 
+19. parameters
+20. function header, function body
+21. call by reference
+22. 2 byte
+23. NULL
+24. Rvalue
+25. *   
+
+    

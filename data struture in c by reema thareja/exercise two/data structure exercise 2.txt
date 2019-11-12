@@ -1,0 +1,767 @@
+1.  Every computer requires appropriate instruction set (programs) to perform the required task. The quality of the processing depends upon the given instructions. if
+    the instructions are improper or incorrect, then it is obvious that the result will be superfluous.
+
+    Therefore, proper and correct instructions should be provided to the computer so that it can provide the desired output. Hence, a program should be developed in
+    such a way that it ensures proper functionality of the computer. in addition, a program should be written in such a manner that it is easier to understand the 
+    underlying logic.
+
+    A GOOD COMPUTER PROGRAM SHOULD HAVE FOLLOWING CHARACTERISTICS:
+
+    * portability : portability refers to the ability of an application to run on different platforms (operating systems) with or without minimal changes. Due to rapid
+    development in the hardware and the software, nowadays platforms change is a common phenomenon. Hence, if a program is developed for a particular platform, then
+    the life span of the program is several affected.
+
+    * Readability : The program should be written in such a way that it makes other programmers or users to follow the logic of the program without much effort. if a 
+    program is written structurally, it helps the programmers to understand their own program in a better way. even if some computational effiency needs to be 
+    sacrified for better readability, it is advisable to use a more user-friendly approach, unless the processing of an application is of utmost importance .
+
+    * Efficiency : Every program requires certain processing time and memory to process the instructions and data. As the processing power and memory are the most
+    precious resources of a computer, a program should be laid out in such a manner that it utilizes the least amount of memory and processing time.
+
+    * structural : To develop a program, the task must be broken down into a number of subtasks. These subtasks are developed independently, and each subtasks is
+    able to perform the assigned job without the help of any other subtask. if a program is developed structurally, it becomes more readable, and the testing and
+    documentation process also gets easier.
+
+    * Flexibility : A program should be flexible enough to handle most of the changes without having to rewrite the entire program. Most of the programs are developed
+    for a certain period and they require modifications from time to time. for example, in case of payroll manangemnt, as the time progresses, some employees may leave
+    the company while some others may join. Hence, the payroll application should be flexible enough to incorporate all the changes without having to reconstruct the
+    entire application .
+
+    * generality : Apart from flexibility, the program should alse be general. Generality means that if a program is developed for a particular tasks, then it should
+    aslo be used for all similar tasks of the same domain. For example, if a program is developed for a particular organization, then it should suit all the other
+    similar organization.
+
+    * Documentation : Documentation is one of the most important components of an application development. Even if a program is developed following the best programming
+    practices, it will be rendered unless if the end user is not able to fully utilize the functionality of the application. A well-documented application is also
+    useful for other programmers because even in the absence of the author, they can understand it.
+
+ 
+2. * data :- computer data is information processed or stored by a computer. this information may be in the form of text documents, images, audio clips, software
+    programs, or other types of data. computer data may be processed by the computer's CPU and is stored in files and folders on the computer's hard disk.
+
+    As its most rudimentary level, computer data is a bunch of ones and Zeros, Known as binary data. Because all computer data is in binary format, it can be created,
+    processed, saved, and stored digitally. This allows data to be transferred from one computer to another using a network connection or varioue media devices. it 
+    also does not deteriorate over time or lose quality after being multiple times.
+
+    * file :- A file is a collection of data stored in one unit, identified by a filename. it can be a document, picture, audio or video stream, data library, 
+    application, or other collection of data. 
+
+    * Record :- A record is a database entry that may contain one or more values. Groups of records are stored in a table, which defines what types of data each 
+    record may contain. Databases may contain multiple tables which may each contain multiple records.
+
+    * primary key :- A primary key is a unique identifier for a database record. When a table is created, one of the fields is typically assigned as the primary 
+    key. while the primary key is often a number, it may also be a text field or other data type. for example, if a database contains definations of computer
+    terms, it would make sense that each term is only listed once in the database. By defining the "Term" field as the primary key, it would ensures that no term
+    is listed more than once in the database.
+
+3.  data structures are used to store data in a computer in an organized fashion.
+    examples of data structures are lists, stack, queues, Trees, Graphs, Sets, Hash table.
+
+4.  CLASSIFICATIONS OF DATA STRUCTURES
+ 
+    data structures are generally classified into two classes :
+    
+    * primitive Data structures
+    * Non-primitive Data structures
+
+    * primitive Data structures 
+
+    primitive data structures are the fundamental data types which are supported by programming language. Example integer, float(real), characters, Boolean
+ 
+    * Non-primitive Data structures
+
+    Non-primitive Data structures are created using primitive data structures. These Data structures can be designed by users. Examples : lists, graphs, stacks, trees
+
+    Non-primitive Data structures can further be classified into two categories:
+
+    * linear data structures
+    * non-linear data structures 
+   
+    * linear data structures
+ 
+    In a linear data structure, the elements of Data structure are stored in a linear or sequential order. examples arrays, linked lists, stacks, queues 
+  
+    * Non-linear data structures 
+
+    if the elements of a Data structures are not stored in a sequential order, then it is a Non-linear Data structure. examples Trees, graphs
+
+5.  The different Data structures are :
+
+    Array : is a linear data structure consisting of a collection of elements each identified by array index.
+
+    array can be used for sorting elements, can perform matrix operation & can be used in CPU scheduling.  
+
+    Stack : is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO (last in first out). insertion in
+    a stack is called PUSH while deletion from stack is called POP.
+
+    stack is used in Expression evaluation, Forward and Backward feature in web browsers, syntax parsing, used in many algorithms like Tower of Hanoi, histogram
+    problem etc.
+
+    queue : is a linear structure which follows a particular order in which the operations are performed. The order is FIFO (first in first out). Insertion in a stack
+    is called Enqueue while deletion from stack is called Dequeue.
+
+    queue is used when a resource is shared among multiple consumers like in CPU scheduling, Disk scheduling. It is also used in palindrome recognition.
+
+    Binary tree : is a tree data structure in which each node has at most two children which are referred to as the left child and the right child.
+
+    Binary Tree applications are Binary Search Tree, Heaps, Binary Tries etc.
+
+    Binary Search Tree : is a binary treee where the value of each node is greater than or equal to the value of left subtree & the value of each node is less than or
+    equal to the right subtree.
+  
+    Binary search tree is used to implement multilevel indexing in database. It is also used in Huffman coding Algorithm & to implement searching Algorithm.
+
+    Heap : is a specialised tree data structure that satisfies the following property : if p is a parent node of c, then the value of p is either greater than or 
+    equal to (in a max heap) of less than or equal to (in a min heap) the value of c.
+
+    Heap is used in Heapsort & in Dynamic memory allocation in lisp.
+
+    Trie : is an ordered tree data structure that is used to store a dynamic set or associative array where the keys are usually strings.
+
+    Trie is used an dictionary such as one found on a mobile telephone for autocompletion and spell-checking. Trie is also used in Aho-corasick algorithm & in KMP
+    algorithm.      
+
+    Hash Table : is a data structure that is used to store keys/value pairs. It uses a hash function to compute an index into an array in which an element will be 
+    inserted or searched.
+
+    Hash Table is used for fast data lookup-symbol for complilers, database indexing, caches, unique data representation..
+
+    Graph : is a data structure that consists a finite set of vertices called nodes & a finite set of ordered pair called Edge. Graph can be Directed or unidirected.
+ 
+    Graph are used to represent networks. Graphs are also used in social networks like linkedin, facebook. For example, in facebook, each person is represented with
+    a vertex (or node). Each node is a structure and consists information like personid, name, gender, and locale. They are also used in Routing Algorithms.
+
+ 6. The basic operations that are performed on data structure are as follows:
+  
+    insertion :- Insertion means addition of a new data element in a data structure.
+
+    Deletion :- Deletion means removal of a data element from a data structure if it is found.
+  
+    Searching :- Searching involves searching for the specified data element in a data structure.
+
+    Traversal :- Traversal of a data structure means processing all the data element present in it.
+
+    sorting :- arranging data elements of a data structure in a specified order is called sorting.
+
+    Merging :- combining elements of two similar data structure to form a new data structure of same type, is called merging.
+
+
+7.  The major difference between Array and Linked list regards to their structure. Arrays are index based data structure where each element associated with an index.
+    on the other hand, Linked list relies on references where each node consists of the data and references to the previous and next element.
+
+    Basically, an array is set of similar data objects stored in sequentital memory locations under a common heading or a variable name.
+
+    while linked list is a data structure which consists a sequence of the elements where each element is linked to next element. There are two fields in an element 
+    of linked list. one is data field, and other is link field, Data field contains the actual value to be stored and processed. Futhurmore, the link field holds the
+    address of the next data item in the linked list. The address used to access a particular node is known as pointer.
+
+    Another significant difference between an array and linked list is that Array has a fixed size required to be declared prior, but linked list is not restricted to
+    size and expand and contract during execution.
+
+8. an abstract data type (ADT) is the way we look at a data structures, focusing on what it does and ignoring how it does its job. For example, stacks and queues are 
+   prefect examples of an ADT . we can implement both these ADTs using an array or a linked list. This demonstrates the 'abstract type' and 'abstract' and then discuss
+   their meaning.
+
+   to futher understand the meaning of an abstract data type. we will break the term int 'data type' and  'abstract' 
+
+   Data type :- data types of a variable is the set of values that the variable can take. we have already read the basic data types in C includes int, char, float and
+   double.
+
+   In other words, the operations that can be performed on a data type are an inseparable part of its identity. Therefore, when we declare a variable of an abstract
+   data types (eg stack and queue), we also need to specify the operation that can be performed on it.
+
+   Abstract :- The word 'abstract' in the context of data structures means considered apart from detailed specification or implementation
+
+   ADVANTAGES OF USING ADTs
+
+   in the real world, programs evolve as a result of new requirements or constraints, so a modification to a program commonly requires a change in one or more its
+   data structure. For example, if you want to add a new field to a student's record to keep track of more information about each student, then it will be better to
+   replace an array with a linked structure to improve the program's efficiency.  
+
+
+
+9. Arrays are basically a collection of similar type of data in a contiguos memory location under one name.
+
+   ADVANTAGES :
+ 
+   * collection of similar types of data.
+  
+   * if we want to store the marks of all students it will easy to store in array otherwise we have to store marks in different different locations, which is not 
+   easy to memorise.
+
+   * we have to only remember the first index of array.
+
+   * used to implement other data structure like linked lists, stack, queue, trees, graph etc.
+
+   * 2 dimensional array is used to represent a matrix.
+
+   DISADVANTAGES
+
+   * Time complexity increase in insertion and deletion operation.
+
+   * wastage of memory because arrays are fixed in size.
+
+   * if there is enough space present in the memory but not in contiguos form, in this case you will not able initialize your array.
+
+   * it is not possible to increase the size of the array, once you had declared the array.
+
+   LINKED LIST
+
+   it is a data structure in which elements are linked using pointers. A node represents an element in linked list which have some data and a pointer pointing to next
+   node. 
+
+    ADVANTAGES OF LINKED LIST
+
+   * DYNAMIC DATA STRUCTURE
+  
+   Linked list is a dynamic data structure so it can grow and shrink at runtime by allocating and dellocating memory. so there is no need to give initial size of 
+   linked list
+
+   * INSERTION AND DELETION
+
+   insertion and deletion of nodes are really easier. Unlike array here we don't have to shift elements after insertion or deletion of an element. In linked list we
+   just have to update the address present in next pointer of node.
+
+   * NO MEMORY WASTAGE
+
+   as the size of linked list can increase or decrease at runtime so there is no memory wastage. in case of array there is lot of memory wastage, like if we declare
+   an array of size 10 and store only  6 elements in it then space of 4 elements are wasted. There is no such problem in linked list as memory is  allocated only
+   when required.
+
+   * IMPLEMENTIATION 
+
+   data structure such as stack and queues can be easily implemented using link list.
+
+   DISADVANTAGES OF LINKED LIST 
+  
+   * MEMORY USAGE
+ 
+   More memory is required to store elements in linked list as compared to array. Because in linked list each node contains a pointer and it requires extra memory 
+   for itself.
+
+   * TRAVERSAL
+ 
+   Elements or nodes traversal is difficult in linked list. we can't randomly access any element as we do in array by index. For example if we want to access a node
+   at position n then we have to traverse all the nodes before it. So, time required to access a node is large.
+
+   * REVERSE TRAVERSING
+
+   in linked list reverse traversing is really difficult. In case of doubly linked list its easier but extra memory is required for back pointer hence wastage of 
+   memory.
+
+
+   STACK 
+
+   A stack is a simple data structure for storing data. 
+
+   in stack, the order in which the data arrives is important. Stacks are ideal for enforcing sequential rules of access ie, LIFO
+   
+   A Bunch of plates are the simple examples of stack.
+  
+   Stacks are used for reversing things. If you push something say a string onto a stack one character at a time, and then costruct a string from the members popped
+   off the stack, then the string is reversed
+
+   ADVANTAGES OF STACK
+
+   * Easy to started
+
+   * Less Hardware requirement
+
+   * cross-platform
+
+   DISAVANTAGES OF STACK
+
+   * not flexible
+  
+   * Lack of scailability 
+  
+   * Unable to copy & paste 
+
+   QUEUES 
+
+   it is a simple FIFO data structure. 
+
+   ADVANTAGES OF QUEUES
+
+   the main advantages is that adding or removing elements can be done quickly and efficiently because you would just add elements to the end of the queue or remove
+   them from the front of the queue. 
+   
+   DISADVANTAGES OF QUEUES
+ 
+   *  they are difficult to create, maintain and manipulate as many of them are implemented using pointers .
+
+   * They do not provide sequentia access, this maybe advantageous in some algorithm but in others it is a disaster.
+
+   * non linear data structure takes up more memory as compared to linear data structure. This is mainly because non-linear data structure requires pointers or 
+     adjaceny matrix or some other technique to logically represent it. 
+
+   TREES 
+
+   A tree is a non-linear data structure which consists of a collection of nodes arranged in a hierarchical order. one of the nodes is designated as the root node,
+   and remaining nodes can be partitioned into disjoint sets such that each set is a sub-tree of the root.
+
+   The simplest form of a tree is a binary tree. A binary tree consists of a root node and left and right sub-trees, where both sub-tree are also binary trees.
+   Each node contains a data element, a left pointer which points to the left sub-tree and a right pointer which points to the right sub-tree.
+
+   ADVANTAGES AND DISADVANTAGES OF BINARY SEARCH TREES 
+
+   the advantage is that searching takes O(logn) time instead of O(n), and you can easily traverse it to retrive the elements in sorted order rather than having
+   to sort a list.
+
+   The disadvantage is that it takes O(logn) time to modify the kist (balanced trees take longer - this is for the baseline) and to retrieve elements with a known 
+   location. These can be done in constant time in some other data structure.
+
+   Heaps are another common type of binary tree. They also allows you to retrieve elements in sorted order, and each access take constant time. They are not efficient
+   for searching and also require O(logn) time to modify. But if you want to retrive elements in sorted order, as with a priority queue, they are a nice choice.
+
+   GRAPHS
+
+   A graphs is a non-linear data structure which is a collection of vertices (also called nodes) and edges that connect vertices. A graph is often viewed as a 
+   generalization of the tree structure, where instead of a purely parent-to-child relationship between tree nodes, any kind of complex relationships between 
+   the nodes can exist.
+
+   ADVANTAGE OF GRAPH IN DIFFERENT FIELDS
+
+   in maps that draw cities/states/states/region as vertices and adjancency relations as edges.
+
+   once we have a graph of a particular concept, they can be easily used for finding shortest paths, project planning etc
+
+   In circuit networks where points of connection are drawn as vertices and component wires become the edges of the graph
+
+   graphs are also to draw activity network diagrams. These diagrams are extensively used as a project management tool to represent the interdependent relationship
+   between groups, steps, and tasks that have a significant impact on the project.
+
+   In program flow analysis where procedures or modules are treated as vertices and calls to these procedures are drawn as edges of the graph.In 
+   program flow ananlysis where procedures or modules are treated as vertices and calls to these procedures are drawn as edges of the graph.
+
+   In state transition diagrams, the nodes are used to represent states and the edges represent legal mobes from one state to other.
+ 
+   In flowcharts or control-flow graphs, the statements and conditions in a program are represented as nodes and the flow of control is represented by the edges.
+
+
+   DISADVANTAGES IN DATA STRUCTURE
+
+   the usual problem with graph data structures, at least if you implement them with node structures connected by pointers, is that they do not lend themselves to 
+   regular memory access patterns.
+
+   Irregular memory access patterns will be slow, because they will not benefit from spatial locality or (probably) from hardware prefetch. Since a cache miss to main
+   memory can easily cost 150 to 200 cycles this can lead to slow.
+
+   If the graph is known up front, rather than dynamically constructed, then it may be better to represent as a vector of node structures and a spare matrix 
+   representation of the connections, spare matrix structures do permit regular access patterns.
+
+
+10. In programming , algorithm is a set of well defined instructions in sequence to solve the problem.
+
+    QUALITIES OF A GOOD ALGORITHM
+
+    * Input and output should be defined precisely.
+
+    * Each steps in algorithm should be clear and unambiguous.
+
+    * Algorithm should be most effective among many different ways to solve a problem.
+ 
+    * An algorithm shouldn't have computer code. Instead, the algorithm should be written in such a way that it, can be used in similar programming languages.
+
+    EXAMPLES OF ALGORITHMS IN PROGRAMMING
+
+    write an algorithm to add two numbers entered by user.
+
+    step 1: start
+    step 2: Declare variables num1, num2 and sum
+    step 3: Read values num1 and num2
+    step 4: add num1 and num2 and assign the result to sum.
+            sum <- num1 + num2
+    step 5: Display sum
+    step 6: stop
+
+
+11. The following is a list of several popular design approaches :
+
+    1. divide and conquer approach : it is a top-down approach. the algorithm which follow the divide and conquer techniques involve three steps :
+
+    * divide the original into a set of subproblems.
+    * solve every subproblem individually, recursively
+    * combine the solution of the subproblems(top level) into a solution of the whole original problem.
+
+    2. Greedy Technique :  Greedy method is used to solve the optimization problem. An optimization problem is one in which we are given a set of input values, which
+    are required either to be maximized or minimized (known as objective), i.e some constrants or conditions.
+
+     * greedy algorithm always makes the choice (greedy criteria) looks best at the moment, to optimize a given objective.
+     * The greedy algorithm doesn't always guarantee the optimal solution however it generally produces a solution that is very close in value to the optimal.
+
+
+    3. dynamic programming : Dynamic programming is a bottom-up approach we solve all possible small problems and then combine them to obtain solutions for bigger
+       problems.
+
+       this is particularly helpful when the number of copying subproblems is exponentially large. Dynamic programming is frequently related to optimization problems
+
+     
+    4. Branch and Bound :- in Branch and bound algorithm a given subproblem, which cannot be bounded, has to be divided into at least two new restricted subproblems.
+       Branch and Bound algorithm are methods for global optimization in non-convex problems. branch and bound algorithms can be slow, however in the worst case they
+       require efforth that grows exponentially with problem size, but in some cases we are lucky, and the method coverage with much less effort.
+
+    5. Randomized algorithm : A randomized algorithm is defined as an algorithm that is allowed to access a source of indepedent, unbaised random bits, and it is then
+       allowed to use these bits to influence its computation.
+
+
+
+12. modular programming is the process of subdividing a computer program into seprate sub programs. A module is a separate software component. it can often be used
+    in a variety of applications and functions with other components of the system.
+    
+    ADVANTAGES OF MODULARIZATION 
+
+    Developers often use modularization as a way to simplify their coding. With modularization, the coading process is broken down into various steps instead of having
+    to be do one large piece of code at a time. This method provides developers with a number of advantages over other strategies.
+
+13. TREE DATA STRUCTURE
+
+    there are many basic data structures that can be used to solve application problems. Array is a good static data structure that can be accessed randomly and is 
+    fairly easy to implement. Linked Lists on the other hand is dynamic and is ideal for application that requires frequent operations such as add, delete, and 
+    update. one drawback of linked list is that data access is sequential. Then there are other specialized data structures like, stacks and queues that allows us to
+    solve complicated problems (eg: maze traversal) using these restricted data structures. one other data structures is the hash table that allows user to program
+    applications that require frequent search and updates. they can be done in O(1) in a hash table.
+
+   one of the disadvantages of using an array or linked list to store data is the time necessary to search for an item. since both the arrays and Linked lists are 
+   linear structures the time required to search a "linear" list is proportional to the size of the data set. For example, if the size of the data set is n, then
+   the number of comparisions needed to find (or not find) an item may be as bad as some multiple of n. so imagine doing the search on a linked 
+
+   list (or  array) with n = 10^6 nodes. Even on a machine that can do million comparisions per second, searching for m items will take roughly m seconds. this not
+   acceptable in today's world where speed at which we complete operations is extremely important. Time is money. Therefore it seems that better (more efficient)
+   data structures are needed to store and search data.
+
+   In this chapter, we can extend the concept of linked data structure (linked list, stack, queue) to a structure that may have multiple relations among its nodes
+   such a structure is called a tree. A tree is a collection of nodes connected by directed (or undirected) edges. A tree is a nonlinear data structure, compared to
+   arrays, linked lists, stacks and queues which are linear data structures. A tree can be empty with no nodes or a tree is a structure consisting of one node called
+   the root and zero or one or more subtrees. A tree has following general properties.
+
+   * on node is distinguished as a root;
+   * Every node (exclude a root) is connected by a directed edge from exactly one other node; A direction is : parent-> children
+
+   A  is parent of B, c, D 
+   B is called child of A. 
+   on the other hand, B is parent of E, F, K      
+
+   Each node can have arbitary number of children. Nodes with no children are called leaves or external nodes. c, E, F, L, G are leaves. Nodes, which are not leaves,
+   are called internal nodes. Internal nodes have at least one child.
+
+   Nodes with the same parent are called siblings. B, C, D are called siblings. The depth of a node is the number of edges from the root to the node. The depth of 
+   K is 2. The height of a node is the number of edges from the node to the deepest leaf. The height of B is 2. The heignt of a tree is a height of a root.
+
+   A GENERAL TREE 
+
+   A general tree is a tree where each node may have zero or more children (a binary tree is a specialized case of a general tree). General trees are used to model 
+   applications such as file systems.
+
+   IMPLEMENTATION
+
+   since each node in a tree can have an arbitary number of children, and that number is not known in advance, the general tree can be implemented using a first child/
+   next sibling method. Each node will have TWO pointers: one to the leftmost child, and one to the rightmost sibling. 
+
+   BINARY TREES
+   
+   we will see that dealing with binary trees, a trees each node can have no more than two children is a good way to understand trees.
+  
+   A binary tree in which each node has exactly zero or two children is called a full binary tree. In a full tree, there are no nodes with exactly one child.
+
+   A complete binary tree is a tree, which is completely filled, with the possible exception of the bottom level, which is filled from left to right. A complete binary
+   tree of the height h has between 2^h and 2^(h+1) -1 nodes.
+
+   BINARY SEARCH TREES
+  
+   suppose we visit each node (recursively) as follows. We visit left child, then root and then right child, For example, visiting the following tree
+ 
+   In the order defined above will produce the sequence {e, b, f, a, d, g} we call flat (T). A binary search tree (BST) is a tree, where flat(T) is an ordered 
+   sequence. In other words, a binary search tree can be "searched" efficiently using this ordering property. A "balanced" binary tree can be searched in O(logn)
+   time, where n is the number of node in the tree.
+
+14. In computer science, a graph is an abstract data type that is meant to implement the undirected graph and directed graph concepts from mathematics; specifically 
+    the field of graph theory.
+
+   A graph data structure consists of a finite (and possibly mutable) ser of vertices (also called nodes or points), together with a set of unordered pairs of these
+   vertices for an undirected graph or a set of orderd pairs for a directed graph. These pairs are Known as edges (also called links or lines), and for a directed
+   graph are also known as arrows. the vertices may be part of the graph structure, or may be external entities represented by integer indices or references.
+
+   A graph data structure may also associate to each edge some edge value, such as a symbolic label or a numeric attribute (cost, capacity, length, etc).
+
+
+15. The first thing to do is look at the fundamental requirements - what are inputs, what are the outputs, what are the operations in between ?
+
+    Then, the performance and scale requirements - how much data are we talking about ? How frequently will it be accessed ?
+
+    Then, ponder how those requirements align with the simple classic data structures that we all know and love - list, arrays, hash, sets, dictionaries, queues, trees
+    heap and so on. usually there's a good match; if there is only a near-match, you can usually wrap one of those simple structures to give it the API that you really
+    need (like turning a list a stack or queue).
+
+    sometimes, there's no good fit with usual structures. Then you have to consider stuff that isn't used often, but that works wonderfully for some special cases. 
+    Bloom filters are a great example. or stuff that's "bigger" than basic structures, like relational databases or the various NoSQL databases.
+
+   The last two steps depend on having a mental catalog of structures to consider. that's something that comes from experience. The more code you write, the more 
+   familiar you will be various data structures, algorithm, patterns and so on. Reading Books also help, as does reading code, getting feedback on your code, reading
+   other people's feedback on other people's code, and so on. it all takes time. But you can pick up a lot of that stuff without even trying - just by writing software
+   on your own, or better yet as part of a team.
+
+   if there's is still no good fit that comes to mind, talk to people. Ask classmate or co-workers, find online forums and so on. Maybe you can find someone who can
+   help you picture your problem from a different perspective, and maybe that can help you think of a good way to meet your requirement
+
+
+16. In computer science, a space-time or time-memory fadeoff is a way of solving a problem or calculations in less time by using more storage space (or memory), or by
+    solving a problem in very little space by spending a lot time. Most computers have a large amount of space, but not infinte space. Also, most people are willing
+    to wait a little while for a big calculation but not forever. so if your problem is taking a long time but not much memory, a space-time tradeoff would let you
+    use memory and solve the problem more quickly. or, if it could be solved very quickly but requires more memory than you have, you can try to spend more time 
+    solving the problem in the limited memory.
+
+
+17. Algorithm efficieny :- A measure of the average execution time necessary for an algorithm to complete work on a set of data. Algorithm efficiency is characterized
+    by y its order. Typically a bubble sort algorithm will have efficiency in sorting N items proportional to and of the the order of N^2 , usually written O(n^2).
+  
+    This is because an average of N/2 comparisons are required N/2 times, giving N^2 / 4 total comparisions, hence of the order of N^2. In contrast, quicksort has an
+    efficency O(Nlog^2 N)
+
+    if two algorithms for the same problems are of the same order then they are approximately as efficient in terms of computation.
+
+
+18. HOW TO FIND TIME COMPLEXITY OF AN ALGORITHM
+
+    you add up how many machine instructions it will execute as a fuction of the size of its input, and then simplify the expression to the largest (When N is very
+    large) term and can include any simplifying constant factor. 
+
+    For example, lets see how we simplify 2N + 2 machine instructions to describe this just O(N).
+
+    WHY DO WE REMOVE THE TWO 2 S 
+
+    we are inserted in the performance of the algorithm as N becomes large .
+
+    consider the two terms 2N and 2.
+
+    what is the relative influence of these two terms as N becomes large ? suppose N is a million.
+
+    Then the first term is 2 million and the second term is only 2.
+
+    For this reason, we drop all but the largest terms for large N.
+
+    so, now we have gone from 2N + 2 to 2N 
+
+    traditionally, we are only interested in performance up to constant factors.
+
+    This means that we don't really care if there is some constant multiple of difference in performance when N is large. The unit of 2N is not well defined in the 
+    first place anyway. so we can multiply or divide by a constant factor to get to the simplest expression.
+
+    so 2N becomes just N.
+
+ 
+
+19. SIGNIFICANCE  OF THE BIG O NOTATION 
+
+    With respect to computer science, if used appropriately , it is used to compare algorithms with respect to problems. we normally classify problems with respect
+    to how efficientily we can/cannot solve them. with asmptotics, you capture all the instances of a problem. i will expand on these below.
+
+    It is :
+
+    * machine independent :- algorithms are mathematical descriptions (what I give here is not a formal defination, but for our context, the fact it is mathematical
+    is important). All you need to do is pin this down with a model of computation for your analysis. Most theoreticians use the RAM model, a very simple (but 
+    effective) model for computing these things for sequential computing. There are similar models for other models in parallel computing for instance.
+
+    * as I emphazied above, it covers all instances of a problem - we discuss with respect to problems. This notations if used properly can allow you to compare  
+    algorithms with respect to all the instances. A flaw this notation has it doesn't usually cover (unless your algorithm is extermely stable and uniform (i.e., has
+    no extreme cases, does very much the same thing for most instances) smaller instances which may be pratical to consider in application.
+
+    * Allows you to compare algorithms for a problems. we classify problems by complexity classes. The Big-oh notation is with respect to complexity functions
+    (otherwise known as growth functions).
+
+    LIMITATIONS OF THE BIG O NOTATION 
+
+    * Most practical algorithm tasks don't deal with huge data structures, and in many cases simpler (but not as fast asymptotically) algorithm could be better.
+   
+    * Asymptotic performance analysis says nothing about important "details" such as memory layout, interactions with memory cache hierarchy, etc. In practice these
+    could result in order-of-magnitude differences in performance.
+
+    * Asymptotic analysis is performed on inputs assumed to have some "convenient" randomized distribution, which is often not true in practice. This can bite, badly,
+    especially when analysis is concerned with amortized costs rather than upper bound. (Hashig is a prime example...hashing blows up spectacularly when you try to
+    use hash tables for multisets, for example).
+
+    * the big-O-analysis often hides true costs of operations involved in the algorithm. For example, everybody "knows"that hashing is O(1). Expect that when you try 
+    to store strings which have lengths correlated with the number of input elements. i've seen dozens of CS PhDs who happiily made this mistake at a tech interview.
+
+   This said, the asymptotic performance analysis can be quite helpful as the starting points for reasoning about performance of algorithms and data structures, 
+   and one has to understand it (and its limitations) to be a competent programmer.
+
+
+20. Best case :- Best case is the function which performs the minimum numbers of steps on input data of n elements.
+
+    worst case :- worst case is the function which performs the maximum number of steps on input data of size n.
+  
+    Average case :- average case is the function which performs an average number of steps on input data of n elements.
+
+    amortized analysis :- in computer science, amortized analysis is a method for analysis a given algorithm's complexity, or how much of a resource, especially time
+    or memory, it takes to execute. the motivation for amortized analysis is that looking at the worst-case run time per operation, rather than per algorithm, can be
+    too pessimistic.
+
+
+
+21. CATEGORIES OF ALGORITHMS 
+
+    according to the Big O notations, we have different categories of algorithms :
+
+    * constant time algorithm :- running time complexity given as O(1).
+    
+    * Linear time algorithm :- running time complexity given as o(n)
+ 
+    * Logarithmic time algorithm :- running time complexity given as O(logn)
+
+    * polynomial time algorithm :- running time complexity given as O(log n)
+
+    * Exponential time algorithm :- running time complexity given as O(n^2) 
+
+
+22. PROVE A FUNCTION IS IN Big-oh and not in Big-omega  
+
+    prove it by contradiction 
+
+    if we assume there exists a constant c such that
+  
+    6(n * n) + 20n >= C(n * n * n)
+
+    for all n large 
+ 
+    let n > max  {20, 7 / c} + 1 and so on 
+
+    6(n * n) + 20n <  6(n  * n) = 7(n * n) = C * 7/c (n * n) < c(n * n * n)
+
+    it ends to the contradiction. 
+
+   
+
+23. Little-o-notation :- A theoretical measure of the execution of an algorithm, usually the time or memory needed, given the problem size n, which is usually the 
+    number  of items. informally, saying some equation f(n) = o(g(n)), means f(n) becomes insignifcant relative to g(n) as n approaches infinity. The notation is read,
+    "f of n is little oh of g of n."
+
+
+
+25. f(= O(g) says, essentially 
+
+    for at least one choice of a constant k > 0, you can find a constant a such that the inequality 0<= f(x) <= k g(x) holds for all x > a
+  
+    Note that O(g) is the set of all functions for which this condition holds 
+
+    f (= O(g) says, essentially 
+
+    for every choice of a constant k > 0, you can find a constant a such that the inequalty 0 <= f(x) < k g(x) holds for all x > a. 
+  
+    once again, note that O(g) is a set.
+
+    in Big-O, it only necessary that you find a particular multiplier K for which the ineqality holds beyond some minimum x.
+
+    in little-O, it must be there is a minimum x after which the inequality holds no matter how small you make k, as long as it is not negative or zero.
+
+    these both describe upper bonds, althrough somewhat counter-intutively , Little-O is the stronger statement. There is a much larger gap between the growth rates of
+    f and g if f(= o(g) means that f's asymoptotic growth rates of f and g if f(= o(g) than if f(= O(g).
+
+    One illustration of the disparity is this : f(= O(f) is true, but f(= o(f) is flase. Therefore, Big-O can be read as "f(= O(g) means thaf f's asymptotic growth is
+    no faster than g's", whereas "f(= o(g) means that f's asymptotic growth is strictly slower than g's". it's like <= verses <.
+
+    More specifically, if the values of g(x) is a constant multiple of the value of f(x), then f(= o(g) is true. this is why you can drop constants when working with
+    big-o notation.
+
+    However, for f(= o(g) to be true =, then g must include a higher power of x in its formula, and so the relative sepration between f(x) and g(x) must actually
+    get larger as x gets larger.
+
+    To use purely math examples (rather than referring to algorithms):
+
+    The following are true for Big-o, but would not be true if you used little-o:
+
+     * x^2 (= O(x^2)
+     * x^2 (= O(x^2 + x)
+     * x^2 (= O(200 * x ^2)
+
+     The following are true for little-o :
+
+      * x^2 (= o(x * x * x)
+      * x^2 (= o(x!)
+      * In (= o(x)
+
+     note that if f(= o(g), this implies f(= O(g). e.g. x^2 (= o(x * x * x) so it is also true that x^2 (= O(x *x * x), (again, think of O as <= and o as <)
+
+
+26. The omega notation provides a tight lower bound for f(n). this means that the function can never do better than the specified value, but it may do worse.
+
+28. Theta notation provides an asymptotically tight bound for f(n). theta notation is simply written as, f(n) (= theta(g(n))
+
+30. This notation provides a non-asymptotically tight bound lower for f(n). it can be simply written as f(n) (= little omega(g(n))
+
+32. The omega notation provides a tight lower bound for f(n) and the little omega notation provides a non-asymptotically tight lower bound for f(n).  
+
+
+   MULTIPLE-CHOICE QUESTIONS 
+
+
+1. (a) arrays 
+2. (c) Tree
+3. (a) Top 
+4. (a) top
+5. (a) arrays
+6. (b) Full
+7. (a) stacks
+8. (d) Graphs
+9. (d) All of these
+10. (b) O(n)
+11. (b) Big O notation 
+12. (a) omega notation 
+13. (b) n^1.9
+
+
+
+
+
+   TRUE OR FALSE
+
+
+1. False
+2. True
+3. False
+4. False
+5. False
+6. True
+7. False
+8. False
+9. False
+10. False
+11. Flase
+12. True
+13. False
+14. False
+15. False
+
+
+
+
+  FILL IN THE BLANKS
+
+
+
+1. data structures
+2. Functions
+3. Arrays
+4. Data type 
+5. Root = NULL
+6. considered apart from the detailed specifications or implementation
+7. Input size
+8. Amortized case
+9. Index or subscripts
+10. Top
+11. Peep or peek
+12. An attempt is made to insert an element in array, stack ar queue that is already full.
+13. Queue
+14. Rear, front
+15. Linear data structure
+16. program
+17. Time complexity
+18. Average case runnig time 
+19. O(1)
+20. Modulus
+21. Top down
+22. worst
+23. omega
+24. Non-asymptotically
+25. Is in
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
